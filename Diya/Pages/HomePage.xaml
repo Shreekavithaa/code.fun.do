@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="Diya.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Diya.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#80397B"
+    RequestedTheme="Light">
+    <Page.BottomAppBar>
+        <CommandBar Background="#DDDDDD">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton 
+                    x:Name="Logout"
+                    Label="Logout"
+                    Click="Logout_Click">
+                    <AppBarButton.Icon>
+                        <BitmapIcon UriSource="ms-appx:///Images/logout.png"/>
+                    </AppBarButton.Icon>
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+       
+        <Grid Grid.Row="0" Height="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image 
+                x:Name="HeaderTitle" 
+                Grid.Column="0"
+                Source="ms-appx:///Images/Title.PNG"
+                HorizontalAlignment="Left"
+                Margin="5"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Welcome" Style="{ThemeResource ControlContextualInfoTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                <TextBlock x:Name="UserName" Grid.Row="1" Text="VenuMadhav" Style="{ThemeResource ControlHeaderTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Orange"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="List" 
+                   Source="ms-appx:///Images/allList2.png"
+                   Grid.Row="1"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Center"
+                   Tapped="List_Tapped"
+                   Margin="20"
+                   Opacity="0.6"
+                   />
+            <Image x:Name="donate" 
+                   Source="ms-appx:///Images/donate2.png"
+                   Grid.Row="0"
+                   VerticalAlignment="Stretch"
+                   HorizontalAlignment="Center"
+                   Tapped="donate_Tapped"
+                   Margin="20"
+                   Opacity="0.6"
+                   />
+
+        </Grid>
+    </Grid>
+    
+</Page>

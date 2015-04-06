@@ -1,0 +1,122 @@
+﻿<Page
+    x:Class="Diya.Pages.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Diya.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+     Background="#80397B"
+    RequestedTheme="Light">
+    <Page.BottomAppBar>
+        <CommandBar Background="#DDDDDD">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton
+                    x:Name="Register" 
+                    Label="Register"
+                    Icon="AddFriend"
+                    Click="Register_Click">
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image 
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            x:Name="viscenario_logo"
+            Source="ms-appx:///Images/logo.png" 
+            HorizontalAlignment="Center"  
+            VerticalAlignment="Top"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox
+            Grid.Column="1"
+            x:Name="UserNameTextBox" 
+            InputScope="EmailSmtpAddress" 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Center" 
+            Foreground="Black" 
+            SelectionHighlightColor="#FFF15923" 
+            PlaceholderText="Email" 
+            ToolTipService.ToolTip="Input your Email here" 
+            Background="White" 
+            BorderBrush="#FF0A0A0A" 
+            RequestedTheme="Light"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <PasswordBox 
+            Grid.Column="1"
+            x:Name="PasswordTextBox" 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Center" 
+            Background="White" 
+            BorderBrush="#FF0A0A0A" 
+            PlaceholderText="Password" 
+            ToolTipService.ToolTip="Enter your password"
+            SelectionHighlightColor="#FFF15923"/>
+        </Grid>
+        <CheckBox 
+            Grid.Row="5"
+            x:Name="RememberMeCheckBox"
+            Content="Remember Me" 
+            IsChecked="True" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top" 
+            BorderBrush="Black" 
+            Foreground="Black" 
+            RequestedTheme="Light"/>
+        <Button 
+            Grid.Row="6"
+            x:Name="LoginButton" 
+            Content="Login"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            FontWeight="Bold" 
+            Click="LoginButton_Click"
+            CharacterSpacing="1"/>
+        <Grid x:Name="Ring"
+              Grid.Row="0"
+              Grid.RowSpan="8"
+              RequestedTheme="Light" 
+              Background="#99F0F0F0" 
+              Visibility="Collapsed">
+            <ProgressRing 
+                x:Name="ProcessingRing" 
+                Background="Transparent" 
+                Foreground="#FFF15923" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Canvas.ZIndex="1" 
+                RequestedTheme="Light" 
+                IsActive="True"/>
+        </Grid>
+
+    </Grid>
+</Page>

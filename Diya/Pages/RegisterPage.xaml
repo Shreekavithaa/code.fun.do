@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="Diya.Pages.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Diya.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#80397B"
+    RequestedTheme="Dark">
+    <Page.BottomAppBar>
+        <CommandBar Background="#DDDDDD" RequestedTheme="Light">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton
+                    x:Name="Register" 
+                    Label="Register"
+                    Icon="Accept"
+                    Click="Register_Click">
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Foreground="Black" Text="Register" Style="{ThemeResource HeaderTextBlockStyle}" Padding="10"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollMode="Enabled">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Foreground="Black" Text="Name" Margin="10,10,10,0" Style="{ThemeResource MessageDialogTitleStyle}"/>
+                <TextBox Grid.Row="1" x:Name="nameregister" BorderBrush="Black" PlaceholderText="Your Name" Margin="10,0,10,10"/>
+                <TextBlock Grid.Row="2" Foreground="Black" Text="Email" Style="{ThemeResource MessageDialogTitleStyle}" Margin="10,10,10,0"/>
+                <TextBox Grid.Row="3" x:Name="emailregister" BorderBrush="Black" PlaceholderText="Email" Margin="10,0,10,10" InputScope="EmailSmtpAddress"/>
+                <TextBlock Grid.Row="4" Foreground="Black" Text="Phone No" Style="{ThemeResource MessageDialogTitleStyle}" Margin="10,10,10,0"/>
+                <TextBox Grid.Row="5" x:Name="phoneregister" BorderBrush="Black" PlaceholderText="Phone No" Margin="10,0,10,10" InputScope="TelephoneNumber"/>
+                <TextBlock Grid.Row="6" Foreground="Black" Text="Password" Style="{ThemeResource MessageDialogTitleStyle}" Margin="10,10,10,0"/>
+                <PasswordBox Grid.Row="7" x:Name="passregister" BorderBrush="Black" PlaceholderText="Password" Margin="10,0,10,10"/>
+                <TextBlock Grid.Row="8" Foreground="Black" Text="Confirm Password" Style="{ThemeResource MessageDialogTitleStyle}" Margin="10,10,10,0"/>
+                <PasswordBox Grid.Row="9" x:Name="confpassregister" BorderBrush="black" PlaceholderText="Confirm Password" Margin="10,0,10,10"/>
+                <TextBlock Grid.Row="10" Foreground="Black" Text="* All are mandatory fields, Your email id will be the userrname to Login" TextWrapping="Wrap" Margin="10" Style="{ThemeResource FlyoutPickerTitleTextBlockStyle}"/>
+
+            </Grid>
+        </ScrollViewer>
+        <Grid x:Name="Ring"
+              Grid.Row="0"
+              Grid.RowSpan="2"
+              RequestedTheme="Light" 
+              Background="#99F0F0F0" 
+              Visibility="Collapsed">
+            <ProgressRing 
+                x:Name="ProcessingRing" 
+                Background="Transparent" 
+                Foreground="#FFF15923" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Canvas.ZIndex="1" 
+                RequestedTheme="Light" 
+                IsActive="True"/>
+        </Grid>
+    </Grid>
+</Page>

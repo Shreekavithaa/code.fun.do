@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="Diya.Pages.MapsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Diya.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:map="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d"
+    Background="#80397B"
+    RequestedTheme="Light">
+    <Page.BottomAppBar>
+        <CommandBar Background="#DDDDDD">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton 
+                    x:Name="Directions"
+                    Label="Directions"
+                    Icon="Directions"
+                    Click="Directions_Click">
+                </AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid x:Name="LayoutRoot" Background="White">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image 
+                x:Name="Viscenario" 
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Opacity="0.2"
+                Source="ms-appx:///Images/logo.png"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"/>
+        <Grid Grid.Row="0" Height="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Image 
+                x:Name="HeaderTitle" 
+                Grid.Column="1"
+                Source="ms-appx:///Images/Title.PNG"
+                HorizontalAlignment="Right"
+                Margin="5"/>
+            <TextBlock Text="Navigation" Style="{ThemeResource HeaderTextBlockStyle}" Foreground="Black" Padding="10"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <map:MapControl x:Name="map1" Loaded="map1_Loaded" />
+
+            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,12">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,-6">
+                    <Button Margin="4,0" Content="You"    x:Name="buttonYou" Click="buttonYou_Click" MinWidth="30" />
+                    <Button Margin="4,0" Content="Destination" x:Name="buttonJayway" Click="buttonJayway_Click"  MinWidth="30" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,-6">
+                    <Button Margin="4,0" Content="R" x:Name="buttonRoad" Click="buttonRoad_Click"  MinWidth="30" />
+                    <Button Margin="4,0" Content="A" x:Name="buttonAerial" Click="buttonAerial_Click" MinWidth="30" />
+                    <Button Margin="4,0" Content="H"  x:Name="buttonHybrid" Click="buttonHybrid_Click"  MinWidth="30"/>
+                    <Button Margin="4,0" Content="T"  x:Name="buttonTerrain" Click="buttonTerrain_Click" MinWidth="30" />
+                </StackPanel>
+
+                <Viewbox>
+                    <StackPanel Orientation= "Vertical" Margin="10,0" Background="#DDDDDD" Opacity="1" >
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0"    >
+                            <CheckBox Margin="4,0" x:Name="Landmarks" Checked="Landmarks_Checked" Unchecked="Landmarks_Unchecked" Content="Landmarks"   />
+                            <CheckBox Margin="4,0" x:Name="Pedestrian" Checked="Pedestrian_Checked" Unchecked="Pedestrian_Unchecked" Content="Pedestrian"/>
+                            <CheckBox Margin="4,0" x:Name="TileSource" Checked="TileSource_Checked" Unchecked="TileSource_Unchecked" Content="Http Tile"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0"    >
+                            <CheckBox Margin="4,0" x:Name="Dark" Checked="Dark_Checked" Unchecked="Dark_Unchecked" Content="Dark" />
+                            <CheckBox Margin="4,0" x:Name="Traffic" Checked="Traffic_Checked" Unchecked="Traffic_Unchecked" Content="Traffic"/>
+                            <CheckBox Margin="4,0" x:Name="CustTileSource" Checked="CustTileSource_Checked" Unchecked="CustTileSource_Unchecked" Content="Custom Tile"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Viewbox>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+</Page>
