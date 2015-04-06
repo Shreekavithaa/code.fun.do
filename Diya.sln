@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diya", "Diya\Diya.csproj", "{556AB039-6276-4324-BEE8-59E056912B39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B5AABA0A-2031-448C-AC23-9E639908A8F3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|ARM.ActiveCfg = Debug|ARM
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|ARM.Build.0 = Debug|ARM
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|ARM.Deploy.0 = Debug|ARM
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|x86.ActiveCfg = Debug|x86
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|x86.Build.0 = Debug|x86
+		{556AB039-6276-4324-BEE8-59E056912B39}.Debug|x86.Deploy.0 = Debug|x86
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|ARM.ActiveCfg = Release|ARM
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|ARM.Build.0 = Release|ARM
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|ARM.Deploy.0 = Release|ARM
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|x86.ActiveCfg = Release|x86
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|x86.Build.0 = Release|x86
+		{556AB039-6276-4324-BEE8-59E056912B39}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
